@@ -1,2 +1,10 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, 'Home') %>
+<div id="form">
+	<%= form_tag users_path, method: :get do %>
+	<%= label :kojaw, "Kojaw?", class: "search_tags"%>
+	<%= text_field_tag :project_name, params[:project_name] %>
+	<%= label :city, "City?" , class: "search_tags" %>
+	<%= text_field_tag :client, params[:client] %>
+	<%= submit_tag "Search", name: nil, class: "btn btn-large btn-primary" %>
+	<% end %>
+ </div>

@@ -1,0 +1,31 @@
+<% provide(:title, 'Business Information') %>
+<h1>Business Information</h1>
+
+  <div class="span6 offset3">
+<%= form_for @userinfo, :url => userinfo_path do |form| %>
+	  
+      <%= form.label :business_name, "Business Name" %>
+      <%= form.text_field :name %>
+	 
+	  
+      <%= form.label :address, "Address" %>
+      <%= form.text_field :address %>
+
+      <%= form.label :zipcode, "Zipcode" %>
+      <%= form.text_field :zipcode %>
+
+      <%= form.label :phone, "Phone Number" %>
+      <%= form.text_field :phone %>
+	  
+      <%= form.label :website, "Website" %>
+      <%= form.text_field :website %>
+	  
+      <%= form.label :hours, "Business Hours" %>
+      <%= form.text_field :hours %>
+	  
+      <%= form.label :other, "Other Information" %>
+      <%= form.text_area :other %>
+
+      <%= form.submit "Add Business Information", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>

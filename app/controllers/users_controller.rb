@@ -25,7 +25,7 @@ class UsersController < ApplicationController
         redirect_to @user
       else
         render 'new'
-      end
+    end
     end
     def edit
         @user = User.find(params[:id])
@@ -45,9 +45,9 @@ class UsersController < ApplicationController
 
         def user_params
           params.require(:user).permit(:name, :email, :password,
-                                       :password_confirmation)
+                                       :password_confirmation, :address, :zipcode, :phone)
         end
-
+        
         # Before filters
 
         def signed_in_user

@@ -19,15 +19,15 @@ module Kojaw
     config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
-      :domain               => "yourdomain.dev",
-      :user_name            => "from@yourdomain.dev",
-      :password             => "Super-Secure-Password",
+      :domain               => "kojaw.herokuapp.com",
+      :user_name            => "sdemooei@gmail.com",
+      :password             => "sheyda1990",
       :authentication       => :plain,
       :enable_starttls_auto => true
     }
 
     config.action_mailer.default_url_options = {
-      :host => "yourdomain.dev"
+      :host => "kojaw.com"
     }
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.

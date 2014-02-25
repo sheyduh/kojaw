@@ -12,8 +12,8 @@ describe "User pages" do
       visit users_path
     end
 
-    it { should have_title('All users') }
-    it { should have_content('All users') }
+    it { should have_title('Directory') }
+    it { should have_content('Directory') }
 
       it "should list each user" do
         User.paginate(page: 1).each do |user|

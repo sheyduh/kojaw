@@ -11,8 +11,7 @@ Kojaw::Application.routes.draw do
   match '/terms', to: 'static_pages#terms', via: 'get'
   match '/privacy', to: 'static_pages#privacy', via: 'get'
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
-  match '/usermaps',  to: 'usermaps#new',         via: 'get'
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

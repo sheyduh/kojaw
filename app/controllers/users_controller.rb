@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
     def index
       @search = User.search(params[:q])
-      @users = @search.result
+      @users = @search.result.order("name")
     end
     
     def search
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
 
         def user_params
           params.require(:user).permit(:name, :email, :password,
-                                       :password_confirmation, :address, :zipcode, :phone)
+                                       :password_confirmation, :address, :zipcode, :phone, :city)
         end
         
         # Before filters

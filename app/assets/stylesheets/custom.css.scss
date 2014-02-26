@@ -63,6 +63,20 @@ p {
   line-height: 1.7em;
 }
 
+.address, .hours_of_operation, .website_link, .other_info {
+	text-align: left;
+	color: #000000;
+	font-style:normal;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.phoneno {
+	color: #436EEE;
+	font-style: normal;
+	text-align: left;
+}
+
 /* header */
 
 #logo {
@@ -225,6 +239,12 @@ input {
 
 #form {
 	margin-top: 40px;
+}
+
+* a:hover {
+  background-color: rgb(246,251,208) !important;
+  color: #000 !important;
+  text-decoration: none !important;
 }
 
 .btn-primary {

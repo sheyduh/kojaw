@@ -68,6 +68,7 @@ describe "User pages" do
           fill_in "Zipcode",          with: new_zipcode
           fill_in "Phone Number",     with: new_num
           fill_in "Business Hours",   with: new_hours
+          fill_in "Business Category",   with: new_category
           fill_in "Other",            with: new_other
           fill_in "Password",     with: "foobar"
           fill_in "Confirmation", with: "foobar"
@@ -99,6 +100,7 @@ describe "User pages" do
               fill_in "Zipcode",          with: new_zipcode
               fill_in "Phone Number",     with: new_num
               fill_in "Business Hours",   with: new_hours
+              fill_in "Business Category",   with: new_category
               fill_in "Other",            with: new_other
               fill_in "Password",         with: user.password
               fill_in "Confirm Password", with: user.password

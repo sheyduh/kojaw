@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  attr_accessor :category
   before_save { self.email = email.downcase }
    validates :name, presence: true, length: { maximum: 50 }
   validates :city, presence: true, length: { maximum: 50 }

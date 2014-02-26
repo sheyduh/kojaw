@@ -12,6 +12,8 @@ describe User do
   it { should respond_to(:email) }
   it { should respond_to(:address) }
   it { should respond_to(:zipcode) }
+  it { should respond_to(:city) }
+  it { should respond_to(:category) }
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }

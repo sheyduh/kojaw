@@ -6,42 +6,47 @@
     <%= form_for(@user) do |form| %>
 	<%= render 'shared/error_messages' %>
 	
-    <%= form.label :name, "Business Name" %>
+    <%= form.label :name, "Business Name*" %>
     <%= form.text_field :name %>
+	
+    <%= form.label :category, "Business Category*" %>
+	<%= form.select :category, [['Please select a Category', nil], 'Active Life', 'Automotive', 'Beauty & Spa', 'Doctor & Medical', 'Entertainment', 'Financial Services', 'Health Services','Home Services','Local Services','Lounge','Mass Media','Pets','Professional Services','Real Esatet','Religious Organization','Restaurant','Shopping','Supermarket','Travel' ] %>
+    <%= form.text_area :other, :placeholder => "Please specify speciality. For example, for Doctor & Medical, you can write Orthopedic Surgeon, Heart Surgeon, etc." %>
 
-    <%= form.label :address, "Address" %>
+    <%= form.label :address, "Address*" %>
     <%= form.text_field :address %>
 	
-    <%= form.label :city, "City" %>
+    <%= form.label :city, "City*" %>
     <%= form.text_field :city %>
 
-    <%= form.label :zipcode, "Zipcode" %>
+    <%= form.label :zipcode, "Zipcode*" %>
     <%= form.text_field :zipcode %>
 
     <%= form.label :phone, "Phone Number" %>
     <%= form.text_field :phone, :placeholder => "(000)000-0000" %>
-  
+	 
     <%= form.label :website, "Website" %>
     <%= form.text_field :website %>
   
     <%= form.label :hours, "Business Hours" %>
     <%= form.text_field :hours %>
-  
-    <%= form.label :other, "Other Information" %>
-    <%= form.text_area :other %>
 	
-    <%= form.label :email %>
+    <%= form.label :email , "Email*"%>
     <%= form.text_field :email %>
 
-    <%= form.label :password %>
+    <%= form.label :password, "Password*" %>
     <%= form.password_field :password %>
 
-    <%= form.label :password_confirmation, "Confirmation" %>
+    <%= form.label :password_confirmation, "Confirmation*" %>
     <%= form.password_field :password_confirmation %>
 
       <%= form.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>
-	  <p>Already Have An Account? <%= link_to "Sign in!", signin_path %></p>
+	<p>Already Have An Account? <%= link_to "Sign in!", signin_path %></p>
+</br>
+	<p><i> Fields with * cannot be left empty </i></p>
+	<p><i> By clicking "Create My Account", You are agreeing to Kojaw's <b>Terms of Service</b></i> </p>
+
   </div>
 
 </div>

@@ -16,14 +16,6 @@ class User < ActiveRecord::Base
      def User.encrypt(token)
        Digest::SHA1.hexdigest(token.to_s)
      end
-     
-     def self.search(search)
-       if search
-         find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-       else
-         find(:all)
-       end
-     end
 
      private
 

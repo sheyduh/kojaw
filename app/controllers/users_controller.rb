@@ -3,9 +3,14 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
     def index
-          @users = User.all
-          @users = User.search(params[:search])
+      @search = User.search(params[:q])
+      @users = @search.result
     end
+    
+    def search
+      @search = User.search(params[:q])
+      @users = @search.result
+    end 
 
     def show
       @user = User.find(params[:id])

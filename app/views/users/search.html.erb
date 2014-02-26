@@ -1,0 +1,17 @@
+<% provide(:title, 'Home') %>
+
+<div id="form">
+	
+	<%= search_form_for @search do |f| %>
+	
+	<%= f.label :name_cont, "Kojaw?",class: "search_tags" %>
+	<%= f.text_field :name_cont, :placeholder => "Doctor, Kojaw, etc." %>
+
+	<%= f.label :city_cont, "City?",class: "search_tags" %>
+	<%= f.text_field :city_cont, :placeholder => "San Francisco, 94111, etc."  %>
+	
+    <%= f.submit "Search", class: "btn btn-large btn-primary" %>	
+	
+<% end %>
+</div>
+

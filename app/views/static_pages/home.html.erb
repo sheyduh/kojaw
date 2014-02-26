@@ -1,12 +1,15 @@
 <% provide(:title, 'Home') %>
-<div id="form">
+
+<<div id="form">
 
 	<%= form_tag users_path, method: :get do %>
 <p>
-	<%= label :kojaw, "Kojaw?", class: "search_tags" %>
-	<%= text_field_tag :search, params[:search] %>
-	<%= submit_tag "search", :name => nil, class: "btn btn-large btn-primary" %>
+	<%= label :name, "Kojaw?", class: "search_tags"%>
+	<%= text_field_tag :search, params[:name], :placeholder => "Doctor, Kojaw, etc." %>
+	<%= text_field_tag :search, params[:city], :placeholder => "San Francisco, 94111, etc." %>
+	<%= submit_tag "search", :name => nil, :city => nil, class: "btn btn-large btn-primary" %>
 </p>
 <% end %>
 
  </div>
+>

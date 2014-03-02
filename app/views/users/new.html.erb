@@ -3,44 +3,45 @@
 
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(@user) do |form| %>
+    <%= form_for(@user) do |f| %>
 	<%= render 'shared/error_messages' %>
 	
-    <%= form.label :name, "Business Name*" %>
-    <%= form.text_field :name %>
+    <%= f.label :name, "Business Name*" %>
+    <%= f.text_field :name %>
 	
-    <%= form.label :category, "Business Category*" %>
-	<%= form.select :category, [['Please select a Category', nil], 'Active Life', 'Automotive', 'Beauty & Spa', 'Doctor & Medical', 'Entertainment', 'Financial Services', 'Health Services','Home Services','Local Services','Lounge','Mass Media','Pets','Professional Services','Real Esatet','Religious Organization','Restaurant','Shopping','Supermarket','Travel' ] %>
-    <%= form.text_area :other, :placeholder => "Please specify speciality. For example, for Doctor & Medical, you can write Orthopedic Surgeon, Heart Surgeon, etc." %>
-
-    <%= form.label :address, "Address*" %>
-    <%= form.text_field :address %>
+    <%= f.label :other, "Business Category*" %>
+	<%= f.select :other, [['Please select a Category', nil], 'Active Life', 'Automotive', 'Beauty & Spa', 'Doctor & Medical', 'Entertainment', 'Financial Services', 'Health Services','Home Services','Local Services','Lounge','Mass Media','Pets','Professional Services','Real Esatet','Religious Organization','Restaurant','Shopping','Supermarket','Travel' ] %>
+    <%= f.text_area :category, :placeholder => "Please specify speciality. For example, for Doctor & Medical, you can write Orthopedic Surgeon, Heart Surgeon, etc." %>
 	
-    <%= form.label :city, "City*" %>
-    <%= form.text_field :city %>
 
-    <%= form.label :zipcode, "Zipcode*" %>
-    <%= form.text_field :zipcode %>
+    <%= f.label :address, "Address*" %>
+    <%= f.text_field :address %>
+	
+    <%= f.label :city, "City*" %>
+    <%= f.text_field :city %>
 
-    <%= form.label :phone, "Phone Number" %>
-    <%= form.text_field :phone, :placeholder => "(000)000-0000" %>
+    <%= f.label :zipcode, "Zipcode*" %>
+    <%= f.text_field :zipcode %>
+
+    <%= f.label :phone, "Phone Number" %>
+    <%= f.text_field :phone, :placeholder => "(000)000-0000" %>
 	 
-    <%= form.label :website, "Website" %>
-    <%= form.text_field :website %>
+    <%= f.label :website, "Website" %>
+    <%= f.text_field :website %>
   
-    <%= form.label :hours, "Business Hours" %>
-    <%= form.text_field :hours %>
+    <%= f.label :hours, "Business Hours" %>
+    <%= f.text_field :hours %>
 	
-    <%= form.label :email , "Email*"%>
-    <%= form.text_field :email %>
+    <%= f.label :email , "Email*"%>
+    <%= f.text_field :email %>
 
-    <%= form.label :password, "Password*" %>
-    <%= form.password_field :password %>
+    <%= f.label :password, "Password*" %>
+    <%= f.password_field :password %>
 
-    <%= form.label :password_confirmation, "Confirmation*" %>
-    <%= form.password_field :password_confirmation %>
+    <%= f.label :password_confirmation, "Confirmation*" %>
+    <%= f.password_field :password_confirmation %>
 
-      <%= form.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>
 	<p>Already Have An Account? <%= link_to "Sign in!", signin_path %></p>
 </br>

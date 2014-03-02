@@ -9,10 +9,10 @@
 	  <%= form.label :name, "Business Name" %>
 	      <%= form.text_field :name %>
 		  
-	      <%= form.label :category, "Business Category*" %>
-	  	<%= form.select :category, [['Please select a Category', nil], 'Active Life', 'Automotive', 'Beauty & Spa', 'Doctor & Medical', 'Entertainment', 'Financial Services', 'Health Services','Home Services','Local Services','Lounge','Mass Media','Pets','Professional Services','Real Esatet','Religious Organization','Restaurant','Shopping','Supermarket','Travel' ] %>
-	      <%= form.text_area :other, :placeholder => "Please specify speciality. For example, for Doctor & Medical, you can write Orthopedic Surgeon, Heart Surgeon, etc." %>
-
+	      <%= form.label :other, "Business Category*" %>
+	  	<%= form.select :other, ['Active Life', 'Automotive', 'Beauty & Spa', 'Doctor & Medical', 'Entertainment', 'Financial Services', 'Health Services','Home Services','Local Services','Lounge','Mass Media','Pets','Professional Services','Real Esatet','Religious Organization','Restaurant','Shopping','Supermarket','Travel' ] %>
+      <%= form.text_area :category, :placeholder => "Please specify speciality. For example, for Doctor & Medical, you can write Orthopedic Surgeon, Heart Surgeon, etc." %>
+		
 	      <%= form.label :address, "Address" %>
 	      <%= form.text_field :address %>
 		  
@@ -31,9 +31,6 @@
 	      <%= form.label :hours, "Business Hours" %>
 	      <%= form.text_field :hours %>
   
-	      <%= form.label :other, "Other Information" %>
-	      <%= form.text_area :other %>
-	
 	      <%= form.label :email %>
 	      <%= form.text_field :email %>
 

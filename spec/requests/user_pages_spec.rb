@@ -65,6 +65,7 @@ describe "User pages" do
           fill_in "Business Name",    with: new_biz
           fill_in "Address",          with: new_address
           fill_in "City",             with: new_city
+          fill_in "Category",             with: new_category
           fill_in "Zipcode",          with: new_zipcode
           fill_in "Phone Number",     with: new_num
           fill_in "Business Hours",   with: new_hours
@@ -96,6 +97,7 @@ describe "User pages" do
               fill_in "Email",            with: new_email
               fill_in "Business Name",    with: new_biz
               fill_in "Address",          with: new_address
+              fill_in "Category",             with: new_city
               fill_in "City",             with: new_city
               fill_in "Zipcode",          with: new_zipcode
               fill_in "Phone Number",     with: new_num

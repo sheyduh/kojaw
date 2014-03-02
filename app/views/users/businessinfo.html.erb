@@ -1,0 +1,41 @@
+<% provide(:title, 'Business Information') %>
+<h1>Business Information</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+	<%= render 'shared/error_messages' %>
+
+<%= f.label :other, "Business Category*" %>
+<%= f.select :other, [['Please select a Category', nil], 'Active Life', 'Automotive', 'Beauty & Spa', 'Doctor & Medical', 'Entertainment', 'Financial Services', 'Health Services','Home Services','Local Services','Lounge','Mass Media','Pets','Professional Services','Real Esatet','Religious Organization','Restaurant','Shopping','Supermarket','Travel' ] %>
+<%= f.text_area :category, :placeholder => "Please specify speciality. For example, for Doctor & Medical, you can write Orthopedic Surgeon, Heart Surgeon, etc." %>
+
+<%= f.hidden_field :tag, :value => [:other, :category]%>
+
+<%= f.label :address, "Address*" %>
+<%= f.text_field :address %>
+
+<%= f.label :city, "City*" %>
+<%= f.text_field :city %>
+
+<%= f.label :zipcode, "Zipcode*" %>
+<%= f.text_field :zipcode %>
+
+<%= f.label :phone, "Phone Number" %>
+<%= f.text_field :phone, :placeholder => "(000)000-0000" %>
+ 
+<%= f.label :website, "Website" %>
+<%= f.text_field :website %>
+
+<%= f.label :hours, "Business Hours" %>
+<%= f.text_field :hours %>
+
+<%= f.label :extra,"Additional Information"%>
+<%= f.text_area :extra, :placeholder => "Please share any other information we may have left out in the form" %>
+
+  <%= f.submit "Add My Information", class: "btn btn-large btn-primary" %>
+<% end %>
+
+  </div>
+
+</div>

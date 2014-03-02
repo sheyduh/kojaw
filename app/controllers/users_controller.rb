@@ -4,7 +4,10 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
     def index
       @search = User.search(params[:q])
-      @users = @search.result.order("name")
+      @users  = params[:distinct].to_i.zero? ?
+        @search.result :
+        @search.result(distinct: true)
+
     end
     
     def search
@@ -12,6 +15,16 @@ class UsersController < ApplicationController
       @users = @search.result
     end 
 
+    def advanced_search
+      @search = User.search(params[:q])
+      @search.build_grouping unless @search.groupings.any?
+      @users  = params[:distinct].to_i.zero? ?
+        @search.result :
+        @search.result(distinct: true)
+
+      respond_with @users
+    end
+    
     def show
       @user = User.find(params[:id])
     end
@@ -51,7 +64,7 @@ class UsersController < ApplicationController
 
         def user_params
           params.require(:user).permit(:name, :email, :password,
-                                       :password_confirmation, :address, :zipcode, :phone, :city,)
+                                       :password_confirmation, :address, :category, :tag, :zipcode, :phone, :city, :other)
         end
         
         # Before filters

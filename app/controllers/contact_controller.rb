@@ -1,19 +1,16 @@
 class ContactController < ApplicationController
 
-  def new
-    @message = Message.new
+  def contact
   end
 
-  def create
-    @message = Message.new(params[:message])
-    
-    if @message.valid?
-      NotificationsMailer.new_message(@message).deliver
-      redirect_to(root_path, :notice => "Message was successfully sent.")
+  def dispatch_email
+    user_info = params[:user_info]
+    if ContactMailer.send_email(user_info).deliver
+      flash[:notice] = "Sent!"
     else
-      flash.now.alert = "Please fill all fields."
-      render :new
+      flash[:notice] = "Could't send you message."
     end
+    redirect_to contact_url
   end
 
 end

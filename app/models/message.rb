@@ -1,22 +1,24 @@
 class Message
 
-  include ActiveModel::Validations
-  include ActiveModel::Conversion
-  extend ActiveModel::Naming
+  class ContactMailer < ActionMailer::Base
 
-  attr_accessor :name, :email, :subject, :body
+    attr_accessor :name, :email, :message
 
-  validates :name, :email, :subject, :body, :presence => true
-  validates :email, :format => { :with => %r{.+@.+\..+} }, :allow_blank => true
-  
-  def initialize(attributes = {})
-    attributes.each do |name, value|
-      send("#{name}=", value)
+    default to: "name@kojaw.com",
+            from: "contact@kojaw.com"
+
+    headers = {'Return-Path' => 'contact@kojaw.com'}
+
+    def send_email(user_info)
+      @user_info = user_info
+
+      mail(
+        to: "name@kojaw.com",
+        subject: "Kojaw's Contact Form",
+        from: "Kojaw <contact@Kojaw.com>",
+        return_path: "contact@Kojaw.com",
+        date: Time.now,
+        content_type: "text/html"
+      )
     end
   end
-
-  def persisted?
-    false
-  end
-
-end
